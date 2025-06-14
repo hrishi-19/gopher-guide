@@ -43,3 +43,30 @@ Shows different looping patterns in Go:
 - While-like `for` loop
 - Infinite `for` loop with `break` control
 
+---
+## 📁 03_functions
+
+### 1. `basic_function.go`  
+Demonstrates how to define and call a basic function:  
+- Function with a parameter.  
+- No return value.
+
+### 2. `function_with_return.go`  
+Shows how to define a function that returns  value:  
+- Return type specified after parameters.  
+- Value returned using `return` keyword.
+
+### 3. `variadic_function.go`  
+Covers functions that accept a variable number of arguments:  
+- Uses `...` syntax for variadic parameters.  
+- Aggregates input into a slice.
+
+### 4. `named_return_values.go`  
+Demonstrates named return values:  
+- Return variables are declared in the function signature.  
+
+### 5. `defer_panic_recover.go`  
+Covers Go’s error handling via:  
+- `defer`: delays execution until the surrounding function returns.  
+- `panic`: aborts the current control flow.  
+- `recover`: captures a panic to prevent crash.
