@@ -70,3 +70,64 @@ Covers Go’s error handling via:
 - `defer`: delays execution until the surrounding function returns.  
 - `panic`: aborts the current control flow.  
 - `recover`: captures a panic to prevent crash.
+
+---
+## 📁 04_more_types
+
+### 1. `pointers.go`  
+Demonstrates the use of pointers in Go:  
+- `&` operator to get the address of a variable.  
+- `*` operator to dereference and manipulate values via pointers.  
+- Useful for directly modifying values and optimizing memory usage.
+
+### 2. `struct.go`  
+Introduces structs (custom types composed of fields):  
+- Defining and instantiating a struct using `type`.  
+- Accessing and updating struct fields.  
+- Using pointers to structs to modify values without copying.
+
+### 3. `struct_literals.go`  
+Shows struct literals and shorthand syntax:  
+- Initializing structs with values: full, named, and default.  
+- Using `&` with struct literals to get a pointer.  
+- Demonstrates value vs pointer behavior during initialization.
+---
+## 📁 05_arrays
+
+### 1. `arrays.go`  
+Introduces arrays in Go:  
+- Fixed-size collections of elements.  
+- Declaration using `var arr [n]T` and initialization using literals.  
+- Demonstrates indexing, comparison, and printing of arrays.  
+- Highlights default values and equality checks.
+
+### 2. `slices.go`  
+Explores Go slices (dynamic views over arrays):  
+- Slicing an existing array with `[low:high]` syntax.  
+- Slice literals, length and capacity.  
+- Modifying a slice affects the underlying array.  
+- Re-slicing operations like trimming and extending.
+
+### 3. `slice_append.go`  
+Focuses on slice growth and `append`:  
+- Appending to nil and non-nil slices.  
+- Demonstrates automatic capacity expansion.  
+- Multiple element append in a single call.  
+- Uses a helper `printSlice` function to show slice state.
+
+---
+## 📁 06_maps
+
+### 1. `maps.go`  
+Introduces maps in Go:  
+- Maps are key-value pairs, like dictionaries in other languages.  
+- Declared using `make(map[KeyType]ValueType)`.  
+- Example shows storing `Vertex` structs with string keys.  
+- Accessing map elements using keys.
+
+### 2. `map_operation.go`  
+Demonstrates common map operations:  
+- Inserting and updating values.  
+- Deleting keys with `delete(map, key)`.  
+- Checking for key existence using the `value, ok := map[key]` idiom.  
+- Shows the default zero value if a key is not present.
