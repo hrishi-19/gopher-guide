@@ -131,3 +131,56 @@ Demonstrates common map operations:
 - Deleting keys with `delete(map, key)`.  
 - Checking for key existence using the `value, ok := map[key]` idiom.  
 - Shows the default zero value if a key is not present.
+
+---
+
+## 📁 06_methods
+
+### 🧠 What is a Method?
+
+A **method** in Go is a function that is associated with a specific type using a *receiver*.  
+It allows you to attach behavior (functions) to user-defined types like structs or aliases.
+
+#### Method Signature Example:
+- `func (v Vertex) Abs() float64` – method with a value receiver
+- `func (v *Vertex) Scale(f float64)` – method with a pointer receiver
+- `func (f MyFloat) Abs() float64` – method on a custom float type
+
+---
+
+### 🔍 Methods vs Functions
+
+| Feature        | Method                                 | Function                            |
+|----------------|----------------------------------------|-------------------------------------|
+| Receiver       | Has an explicit receiver (`(v Vertex)`) | No receiver                          |
+| Invocation     | Called with dot notation (`v.Abs()`)    | Called as regular function (`Abs(v)`) |
+| Ownership      | Tied to a type                         | Independent                         |
+
+- Methods improve readability and encapsulate behavior within a type.
+- Functions require explicit parameters and are not associated with a type.
+
+---
+
+### 🔁 Method Indirection
+
+Go automatically handles the following conversions during method calls:
+
+- You can call a **pointer receiver method** on a **value** (Go takes its address).
+- You can call a **value receiver method** on a **pointer** (Go dereferences it).
+
+This allows flexibility in how you use methods without needing to convert manually.
+
+#### Example Cases:
+- `v.Scale(2)` — works even if `Scale` expects a `*Vertex`
+- `p.Abs()` — works even if `Abs` is defined on `Vertex`, not `*Vertex`
+
+This behavior is called **method indirection**, and it simplifies method calls in Go by reducing the need for manual conversions.
+
+---
+
+### 📌 Summary
+
+- Methods in Go are like functions but tied to a specific type.
+- Receivers can be values or pointers.
+- Go provides method indirection, so method calls are flexible between values and pointers.
+- You can define methods on both struct types and custom alias types.
